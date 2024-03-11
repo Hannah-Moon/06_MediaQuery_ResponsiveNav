@@ -1,4 +1,4 @@
-# HTML / CSS Video Play
+# Reactive (Media Query) + Bootstrap
 This is the media query + Bootstrap practice example. 
 
 ![CSS - Flex Cartoon Page](Video_Background.gif)
