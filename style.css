@@ -1,0 +1,272 @@
+/* ---------- Global Setting ---------- */
+*{
+	box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+	background-color: #5d404c;
+	font-family: "Noto Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+	margin: 0;
+} 
+
+/* ---------- Border and colors to clarify layout  ---------- */
+
+/* header, nav, main {
+	border-color: black;
+    border-radius   : 0.5em;
+    padding         : 0.5em;
+    margin          : 0.25em;
+} */
+
+/* header  { background-color  : pink;       }
+article { background-color  : lightgreen; }
+nav     { background-color  : lightblue;  }
+aside   { background-color  : plum;       }
+footer  { background-color  : gold;       } */
+
+.container {
+	width: 100%;
+	max-width: 1480px;
+	padding: 0;
+	margin: auto;
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+}
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px 20px;
+	z-index: 3;
+}
+
+header h1 {
+	position: relative;
+	height: 40px;
+	margin:0;
+	float: left;
+	z-index: 3;
+}
+
+header h1 img{
+	display: block;
+	position: relative;
+	top:30px;
+	width: 30px;
+	height: auto;
+}
+
+a {
+	font-size: 17px;
+	text-decoration: none;
+}
+
+.main-navigation {
+	float: right;
+}
+
+.main-navigation a {
+	color: #fff;
+	margin-left: 20px;
+}
+
+.main-navigation a.active {
+	font-weight: bold;
+	border-bottom: 2px solid #fb8500;
+}
+
+/* ---------- Border and colors to clarify layout  ---------- */
+
+.btn {
+	display: inline-block;
+	color: #fff;
+	font-weight: bold;
+	padding: 12px 20px;
+	border-radius: 8px;
+	background-color: #fb8500;
+}
+
+.sec-btn {
+	background-color: transparent;
+	color: #ffffff;
+	border: 1.5px solid #ffffff;
+}
+
+.sec-btn :hover {
+	background-color: transparent;
+	color: #010a8b;
+	border: 1.5px solid #010a8b;
+}
+
+.more-btn {
+	display: none;
+}
+
+/* ---------- Main Contents  ---------- */
+
+.lAside {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	background-color:transparent;
+}
+
+.lAside .container {
+	height: 100%;
+}
+
+/* ---------- Video Contents  ---------- */
+
+.video-wrap {
+	position: absolute;
+	left: 0;
+	width: 160%;
+	height: 100vh;
+	z-index: 1;
+}
+
+.video-wrap video,
+.video-wrap img {
+	position: absolute;
+	display: flex;
+	width: 100%;
+	justify-content: flex-start;
+}
+
+/* ---------- Video Contents  ---------- */
+
+.text-wrap {
+	width: 520px;
+	height: 100vh;
+	padding: 240px 20px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+
+.text-wrap h2 {
+	color: #ffffff;
+	font-size: 64px;
+	line-height: 1.25;
+	font-weight:lighter;
+	margin-bottom: 40px;
+}
+
+/* ---------- Main Contents  ---------- */
+
+.text-wrap h3 {
+	color: #ffffff;
+	font-size: 24px;
+	line-height: 1.25;
+	margin-bottom: 20px;
+}
+
+.text-wrap p {
+	color: #ffffff;
+	font-size: 16px;
+	line-height: 1.8;
+	margin-bottom: 20px;
+}
+
+/* ---------- Media Query  ---------- */
+
+@media screen and (max-width: 768px) {
+
+	header{
+		padding: 0;
+		height: 56px;
+	}
+	header h1{
+		height: 56px;
+	}
+	header h1 img{
+		top:20px;
+		height: 16px;
+	}
+	.main-navigation{
+		position: fixed;
+		top:0;
+		right:0;
+		padding:20px 20px;
+		width: 100%;
+		height: 100vh;
+		background-color: #5d404c;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateX(100%);
+		transition: 0.3s;
+	}
+	.main-navigation.active{
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(0);
+		transition: 0.3s;
+	}
+	.main-navigation a{
+		display: block;
+		margin:auto;
+		margin-bottom:8px;
+		padding:12px;
+	}
+	.main-navigation a.btn{
+		text-align: center;
+	}
+	.video-wrap{
+		top:10vw;
+		left:-10%;
+		width:110%;
+	}
+
+	.text-wrap{
+		width:100%;
+		height: auto;
+		padding:20px;
+		top:auto;
+		bottom:20px;
+	}
+	.text-wrap h2{
+		font-size: 36px;
+	}
+	.text-wrap h3{
+		font-size: 20px;
+	}
+	.text-wrap p {
+		font-size: 14;
+	}
+	.more-btn{
+		display: block;
+		position: absolute;
+		right:12px;
+		top:8px;
+		width:40px;
+		height: 40px;
+		border-radius: 8px;
+		border:none;
+		background-color: transparent;
+	}
+	.more-btn .icon{
+		display: block;
+		width:24px;
+		height: 24px;
+		margin: 0 auto;
+		background: url(../assets/icon-menu.svg) no-repeat center;
+		background-size: contain;
+	}
+	.more-btn.active .icon{
+		background: url(../assets/icon-close.svg) no-repeat center;
+		background-size: contain;
+	}
+}
+
+@media screen and (max-width: 480px) {
+
+}
